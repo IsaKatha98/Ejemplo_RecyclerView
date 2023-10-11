@@ -1,5 +1,7 @@
 package com.example.ejemplo_recyclerview
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -36,7 +38,15 @@ class MainActivity : AppCompatActivity() {
                 Contacto("María", "6784561523"),
                 Contacto("Raúl","644789456"),
                 Contacto("Ana","693882147")
-            )
+            ),
+
+            object: ContactoPulsadoListener {
+                override fun contactoPulsado(contacto: Contacto) {
+                    val dial= Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+contacto.tlf)
+                    )
+                    startActivity(dial)
+                }
+            }
         )
     }
 }
