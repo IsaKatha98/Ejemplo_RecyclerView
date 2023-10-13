@@ -19,28 +19,31 @@ class MainActivity : AppCompatActivity() {
 
             listOf(
 
-                Contacto("Juan","12345"),
-                Contacto("María", "6784561523"),
-                Contacto("Raúl","644789456"),
-                Contacto("Ana","693882147"),
+                Contacto("Juan","12345", "hombre"),
+                Contacto("María", "6784561523", "mujer"),
+                Contacto("Raúl","644789456", "hombre"),
+                Contacto("Ana", "693882147", "mujer"),
 
-                Contacto("Juan","12345"),
-                Contacto("María", "6784561523"),
-                Contacto("Raúl","644789456"),
-                Contacto("Ana","693882147"),
+                Contacto("Juan","12345", "hombre"),
+                Contacto("María", "6784561523", "mujer"),
+                Contacto("Raúl","644789456", "hombre"),
+                Contacto("Ana","693882147", "mujer"),
 
-                Contacto("Juan","12345"),
-                Contacto("María", "6784561523"),
-                Contacto("Raúl","644789456"),
-                Contacto("Ana","693882147"),
+                Contacto("Juan","12345", "hombre"),
+                Contacto("María", "6784561523", "mujer"),
+                Contacto("Raúl","644789456", "hombre"),
+                Contacto("Ana","693882147","mujer"),
 
-                Contacto("Juan","12345"),
-                Contacto("María", "6784561523"),
-                Contacto("Raúl","644789456"),
-                Contacto("Ana","693882147")
+                Contacto("Juan","12345", "hombre"),
+                Contacto("María", "6784561523", "mujer"),
+                Contacto("Raúl","644789456", "hombre"),
+                Contacto("Ana","693882147", "mujer")
             ),
 
             object: ContactoPulsadoListener {
+
+
+
                 override fun contactoPulsado(contacto: Contacto) {
                     val dial= Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+contacto.tlf)
                     )

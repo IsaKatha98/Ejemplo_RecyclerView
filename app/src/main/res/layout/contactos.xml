@@ -12,5 +12,5 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="1"/>
+        app:spanCount="2"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
