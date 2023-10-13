@@ -51,10 +51,16 @@ class ContactosAdapter (
     override fun onBindViewHolder(holder: ViewHolder, posicion: Int) {
         holder.bind(contactos[posicion])
 
-        var inical =contactos[posicion].nombre.get(0).toString()
+        //Creamos una lista de palabras con los nombres y apellidos de cada contacto
+        var palabras = contactos[posicion].nombre.split(" ")
+        var init = "" //Variable que usaremos para guardar las iniciales de los contactos
+        for (palabra in palabras){ //Bucle for para recorrer los nombres de los usuarios
+            init += palabra.substring(0, 1) //Sacamos la primera letra de cada palabra
+        }
+        holder.binding.inicial.text = init.uppercase() //Ponemos las iniciales como texto y las pasamos a mayúscula
+        holder.bind(contactos[posicion]) //Mostramos el contacto correspondiente en cada posición
 
-        holder.binding.inicial.text=inical
-
+        //Cuando se pulsa sobre la imagen
         holder.binding.fotoContacto.setOnClickListener {
             if (holder.binding.inicial.isVisible) {
                 holder.binding.inicial.visibility = View.INVISIBLE
