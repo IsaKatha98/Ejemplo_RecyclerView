@@ -40,16 +40,6 @@ class MainActivity : AppCompatActivity() {
                 Contacto("Ana","693882147", "mujer")
             ),
 
-            object: ContactoPulsadoListener {
-
-
-
-                override fun contactoPulsado(contacto: Contacto) {
-                    val dial= Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+contacto.tlf)
-                    )
-                    startActivity(dial)
-                }
-            }
         )
     }
 }
